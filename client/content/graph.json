@@ -1,0 +1,12 @@
+{
+  "nodes": [
+    {"x": 469, "y": 410},
+    {"x": 493, "y": 364},
+    {"x": 442, "y": 365}
+  ],
+  "links": [
+    {"source":  0, "target":  1},
+    {"source":  1, "target":  2},
+    {"source":  2, "target":  0}
+  ]
+}

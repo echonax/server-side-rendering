@@ -1,0 +1,29 @@
+.floatL {
+	float:left;
+}
+.floatR {
+	float:right;
+}
+
+.contentBackground {
+	background-color: #f6f6f6;
+	float:left;
+	text-align: center;
+}
+
+.link {
+  fill:none;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node {
+  cursor: move;
+  fill: #ccc;
+  stroke: #000;
+  stroke-width: 1.5px;
+}
+
+.node.fixed {
+  fill: #f00;
+}
