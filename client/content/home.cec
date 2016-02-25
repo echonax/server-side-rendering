@@ -1,9 +1,72 @@
 <div class="container-fluid">
-<div class="jumbotron">
-  <h1>Hello, world!</h1>
+    <div class="jumbotron">
+        <h3>Hello to the Gadget world!</h1>
   <p>...</p>
-  <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
-  <div class='row'></div>
+  
+  <div class='row'>
+    <div class="col-xs-6">
+        <div class="jumbotron currentGadgets" style="border:5px !important;border-style: solid !important;">
+          
+        </div>
+    </div>
+    <div class="col-xs-6">
+        <div class="jumbotron" style="border:5px !important;border-style: solid !important;">
+            
+            
+           <div class="form-group">
+                             
+                <input type="text" class="form-control gadget-name-inpt" placeholder="Gadget Name">
+           
+             </div>
+           <div class="form-group">
+             <form role="form">
+                <label class="radio-inline">
+                <input type="radio" name="optradio">Optn
+                </label>
+                <label class="radio-inline">
+                <input type="radio" name="optradio">Optn
+                </label>
+                <label class="radio-inline">
+                <input type="radio" name="optradio">Optn
+                </label>
+             </form>
+            </div>
+            <form class="form-inline">
+            <div class="form-group">
+                <form role="form">
+                    
+                    <label for="sel1">Start:</label>
+                    <select class="form-control" id="sel1" placeholder=".col-xs-2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    
+                    <label for="sel1">End:</label>
+                    <select class="form-control" id="sel2" placeholder=".col-xs-2">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                    </select>
+                    
+                    
+                    </form>
+              </div>
+              </form>
+              <br>
+             <div class="form-group">
+                <button type="button" class="btn btn-primary add-gadget-btn btn-sm">Add!</button>
+             </div>
+                
+   </div>
+            
+            
+            
+        </div>
+    </div>
+  </div>
 </div>
 
 </div>

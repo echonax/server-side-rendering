@@ -27,3 +27,11 @@
 .node.fixed {
   fill: #f00;
 }
+
+
+.gadgetAttrsBox{
+    border: 3px;
+    border-style: solid;
+    border-color: navy;
+    border-radius: 5px;
+}
