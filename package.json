@@ -11,18 +11,5 @@
     "express-session": "^1.11.3",
     "mysql": ">= 2.3.1",
     "socket.io": "~ 0.9.*"
-  },
-  "engines": {
-    "node": "> 0.10.1"
-  },
-  "scripts": {
-    "start": "nohup node app_sysmon.js > /dev/null 2>&1 &",
-    "test": "ps aux | grep \"app_sysmon.js\" | grep -v \"grep\"",
-    "stop": "wget -qO- http://localhost:9006/stop"
-  },
-  "bundledDependencies": [
-    "express",
-    "mysql",
-    "socket.io"
-  ]
+  }
 }

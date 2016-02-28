@@ -4,9 +4,10 @@
 .floatR {
 	float:right;
 }
-
+.textL{
+   text-align: left !important;
+}
 .contentBackground {
-	background-color: #f6f6f6;
 	float:left;
 	text-align: center;
 }
@@ -26,12 +27,4 @@
 
 .node.fixed {
   fill: #f00;
-}
-
-
-.gadgetAttrsBox{
-    border: 3px;
-    border-style: solid;
-    border-color: navy;
-    border-radius: 5px;
 }

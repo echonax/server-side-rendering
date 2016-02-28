@@ -12,7 +12,7 @@ var force = d3.layout.force()
 var drag = force.drag()
     .on("dragstart", dragstart);
 
-var svg = d3.select("svg")
+var svg = d3.select("#topology")
     .attr("width", width)
     .attr("height", height);
 
