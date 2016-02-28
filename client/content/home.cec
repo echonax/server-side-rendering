@@ -39,12 +39,98 @@
             </div>
             <div class="modal-body">
                 <!--boday-->
-                <form >
+                <form>
                     <div class="form-group textL">
                         <label for="socketNameLabel">Your Sockets Name</label>
                         <input class="form-control" id="socketNameInput" placeholder="Socket Name">
                     </div>
-                    
+                    <div class="row">
+                        <div class="col-xs-6 textL">
+                            <label for="socketNameLabel">Start Time</label>
+                            <div class="input-group clockpicker" data-placement="bottom" data-align="left" data-autoclose="true">
+
+                                <input type="text" class="form-control" id="startDate" value="13:14">
+                                <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="col-xs-6 textL">
+                            <label for="socketNameLabel">End Time</label>
+                            <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
+
+                                <input type="text" class="form-control" id="endDate" value="13:14">
+                                <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="row">
+                        <div class="col-xs-12 textL">
+                            <hr>
+                            <div class="checkbox">
+                                <label>
+                                    <input data-toggle="collapse" data-target="#collapseExample" type="checkbox"> Repetition
+                                </label>
+                            </div>
+                            <div class="collapse" id="collapseExample">
+                                <div class="well">
+                                    <!--Weekday boday-->
+                                    <!--<svg height="80" width="100%">
+                                    <g>
+                                        
+                                        <circle cx="25" cy="25" r="20" stroke="aqua" stroke-width="3" fill="white" class="outlets" id="outlet1" data-toggle="modal"
+                                        data-target="#myModal" />
+                                        <text x="12" y="28" font-family="Verdana" font-size="12" fill="blue" > Mon </text>
+                                    </g>
+                                    </svg>-->
+                                   
+                                                <div class="checkbox-group" id="checkboxes">
+                                                    <ul>
+                                                        <li>
+                                                            <input type="checkbox" id="mon" />
+                                                            <label for="mon">MON</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="tue" />
+                                                            <label for="tue">TUE</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="wed" />
+                                                            <label for="wed">WED</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="thur" />
+                                                            <label for="thur">THUR</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="fri" />
+                                                            <label for="fri">FRI</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="sat" />
+                                                            <label for="sat">SAT</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="sun" />
+                                                            <label for="sun">SUN</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <span id="allChecked" style="display:block;color:#999999;margin-left:30px;">
+                                                    (all days selected)
+                                                </span>
+                                            
+                                    <!--Weekday boday-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </form>
                 <!--boday-->
             </div>
