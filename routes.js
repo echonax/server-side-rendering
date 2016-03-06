@@ -1,5 +1,5 @@
-module.exports = function(app,connection,session,gamePage,gamePageHome,gamePageTopology){
-
+module.exports = function(app,connection,session,gamePage,gamePageHome){
+    const fs = require('fs');
 	var sess;
 	
 
@@ -63,11 +63,38 @@ module.exports = function(app,connection,session,gamePage,gamePageHome,gamePageT
 			});
 	});
 
-	app.get('/event', function(req, res) {
+	app.get('/getJSON', function(req, res) {
 		sess = req.session;
-		console.log("inside get")
-		if(sess.username){
-			res.redirect('/event.html');
+		console.log("inside getJSON")
+		if(sess){
+			fs.readFile('./client/content/test.json', (err, data) => {
+                if (err) throw err;
+                var obj = JSON.parse(data);
+                console.log(obj);
+                var strobj = JSON.stringify(obj);
+                res.end(strobj);
+            });
+            //var obj = JSON.parse(fs.readFileSync('file', 'utf8'));
+		}else{
+			//this can be replaced with a page
+			res.write('<h1>Please login first.</h1>');
+			res.end('<a href='+'/'+'>Login</a>');
+		}
+	});
+    
+    app.post('/postJSON', function(req, res) {
+		sess = req.session;
+       
+		console.log("inside postJSON")
+         console.log(req.body);
+		if(sess){
+			fs.writeFile("./client/content/test.json", JSON.stringify(req.body), function(err) {
+                if(err) {
+                    return console.log(err);
+                }
+
+                console.log("The file was saved!");
+            }); 
 		}else{
 			//this can be replaced with a page
 			res.write('<h1>Please login first.</h1>');
@@ -80,7 +107,6 @@ module.exports = function(app,connection,session,gamePage,gamePageHome,gamePageT
 			console.log("inside get home")
 			if(sess.username){
 				res.send(gamePageHome);
-				//res.redirect('/game.html');
 			}else{
 				//this can be replaced with a page
 				res.write('<h1>Please login first.</h1>');
@@ -89,19 +115,6 @@ module.exports = function(app,connection,session,gamePage,gamePageHome,gamePageT
 			
 		});
 
-	app.get('/routes', function(req, res) {
-			sess = req.session;
-			console.log("inside get home")
-			if(sess.username){
-				res.send(gamePageTopology);
-				//res.redirect('/game.html');
-			}else{
-				//this can be replaced with a page
-				res.write('<h1>Please login first.</h1>');
-				res.end('<a href='+'/'+'>Login</a>');
-			}
-			
-		});
 
 	app.get('/logout',function(req,res){
 

@@ -1,180 +1,238 @@
 <div class="container-fluid">
-    <div class="jumbotron">
-        <h3>Hello to the Gadget world!</h3>
-        <p>...</p>
 
-        <svg height="800" width="200">
-            <circle cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet1" data-toggle="modal"
-            data-target="#myModal" />
-            <circle cx="150" cy="50" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet2" data-toggle="modal"
-            data-target="#myModal" />
-            <circle cx="50" cy="150" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet3" data-toggle="modal"
-            data-target="#myModal" />
-            <circle cx="150" cy="150" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet4" data-toggle="modal"
-            data-target="#myModal" />
-            <circle cx="50" cy="250" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet5" data-toggle="modal"
-            data-target="#myModal" />
-            <circle cx="150" cy="250" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet6" data-toggle="modal"
-            data-target="#myModal" />
-            <circle cx="50" cy="350" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet7" data-toggle="modal"
-            data-target="#myModal" />
-            <circle cx="150" cy="350" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet8" data-toggle="modal"
-            data-target="#myModal" />
-            <circle cx="50" cy="450" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet9" data-toggle="modal"
-            data-target="#myModal" />
-            <circle cx="150" cy="450" r="40" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet0" data-toggle="modal"
-            data-target="#myModal" />
-        </svg>
-
-    </div>
-</div>
-
-<!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-            </div>
-            <div class="modal-body">
-                <!--boday-->
-                <form>
-                    <div class="form-group textL">
-                        <label for="socketNameLabel">Your Sockets Name</label>
-                        <input class="form-control" id="socketNameInput" placeholder="Socket Name">
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-6 textL">
-                            <label for="socketNameLabel">Start Time</label>
-                            <div class="input-group clockpicker" data-placement="bottom" data-align="left" data-autoclose="true">
-
-                                <input type="text" class="form-control" id="startDate" value="13:14">
-                                <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-time"></span>
-                                </span>
-                            </div>
-                        </div>
-                        <div class="col-xs-6 textL">
-                            <label for="socketNameLabel">End Time</label>
-                            <div class="input-group clockpicker" data-placement="bottom" data-align="top" data-autoclose="true">
-
-                                <input type="text" class="form-control" id="endDate" value="13:14">
-                                <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-time"></span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div class="row">
-                        <div class="col-xs-12 textL">
-                            <hr>
-                            <div class="checkbox">
-                                <label>
-                                    <input data-toggle="collapse" data-target="#collapseExample" type="checkbox"> Repetition
-                                </label>
-                            </div>
-                            <div class="collapse" id="collapseExample">
-                                <div class="well">
-                                    <!--Weekday boday-->
-                                    <!--<svg height="80" width="100%">
-                                    <g>
-                                        
-                                        <circle cx="25" cy="25" r="20" stroke="aqua" stroke-width="3" fill="white" class="outlets" id="outlet1" data-toggle="modal"
-                                        data-target="#myModal" />
-                                        <text x="12" y="28" font-family="Verdana" font-size="12" fill="blue" > Mon </text>
-                                    </g>
-                                    </svg>-->
-                                   
-                                                <div class="checkbox-group" id="checkboxes">
-                                                    <ul>
-                                                        <li>
-                                                            <input type="checkbox" id="mon" />
-                                                            <label for="mon">MON</label>
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" id="tue" />
-                                                            <label for="tue">TUE</label>
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" id="wed" />
-                                                            <label for="wed">WED</label>
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" id="thur" />
-                                                            <label for="thur">THUR</label>
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" id="fri" />
-                                                            <label for="fri">FRI</label>
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" id="sat" />
-                                                            <label for="sat">SAT</label>
-                                                        </li>
-                                                        <li>
-                                                            <input type="checkbox" id="sun" />
-                                                            <label for="sun">SUN</label>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <span id="allChecked" style="display:block;color:#999999;margin-left:30px;">
-                                                    (all days selected)
-                                                </span>
-                                            
-                                    <!--Weekday boday-->
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </form>
-                <!--boday-->
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
+    <div class="jumbotron" style="background-color:#000d33 !important;">
+        <div id="circles">
+            <svg height="400" width="300" viewBox="0 0 350 400" perserveAspectRatio="xMinYMid" style="background-color:#000d33">
+                <g>
+                    <circle cx="50" cy="50" r="30" stroke="black" stroke-width="3" fill="red" class="outlets" id="outlet1" />
+                    <text x="50" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                        PRİZ 1</text>
+                </g>
+                <g>
+                    <circle cx="150" cy="50" r="30" stroke="black" stroke-width="3" fill="red" class="outlets" id="outlet2" data-target="#socketSettings"
+                    />
+                    <text x="150" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                        IŞIK </text>
+                </g>
+                <g>
+                    <circle cx="250" cy="50" r="30" stroke="black" stroke-width="3" fill="green" class="outlets" id="outlet3" />
+                    <text x="250" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                        DOZLAMA </text>
+                </g>
+                <g>
+                    <circle cx="50" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet4" />
+                    <text x="50" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                        PRİZ 4 </text>
+                </g>
+                <g>
+                    <circle cx="150" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet5" />
+                    <text x="150" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                        PRİZ 5 </text>
+                </g>
+                <g>
+                    <circle cx="250" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet6" />
+                    <text x="250" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                        PRİZ 6 </text>
+                </g>
+                <g>
+                    <circle cx="50" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet7" />
+                    <text x="50" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                        PRİZ 7 </text>
+                </g>
+                <g>
+                    <circle cx="150" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet8" />
+                    <text x="150" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                        DALGA </text>
+                </g>
+                <g>
+                    <circle cx="250" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet9" />
+                    <text x="250" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                        GRUPLAR </text>
+                </g>
+            </svg>
         </div>
     </div>
 </div>
 
+<!-- socketSettings -->
+<div class="modal container fade" id="socketSettings" tabindex="-1" role="dialog" data-focus-on="input:first" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!--header-->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <!--header-->
+            <div class="modal-body">
+                <!--boday-->
 
-
-<!--
-        <div class='row'>
-            <div class="jumbotron" style="border:5px !important;border-style: solid !important;">
-                <div class="form-group">
-                    <input type="text" class="form-control gadget-name-inpt" placeholder="Gadget Name">
+                <div class="list-group">
+                    <button type="button" class="list-group-item" data-toggle="modal" href="#nameSettings"><b>Priz Adı</b> <i class="fa fa-chevron-right fa-fw floatR"></i><span id="socketNameInput" class="floatR"></span></button>
+                    <button type="button" class="list-group-item"><b>Açık/Kapalı</b>
+                        <div class="floatR">
+                            <input class="floatR" type="checkbox" name="my-checkbox" data-size="mini">
+                        </div>
+                    </button>
+                    <button type="button" class="list-group-item" data-toggle="modal" href="#postponeSettings"><b>Geciktirme</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="postponeInput" class="floatR">Yok</span></button>
+                    <button type="button" class="list-group-item" data-toggle="modal" href="#timeSettings"><b>Zamanlama</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="timeInput" class="floatR">Yok</span></button>
+                    <button type="button" class="list-group-item"><b>Grup</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="timeInput" class="floatR">Su Çekme</span></button>
                 </div>
-                <form class="form-inline">
-                    <div class="form-group">
-                        <form role="form">
 
-                            <label for="sel1">Start:</label>
-                            <select class="form-control" id="sel1" placeholder=".col-xs-2">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
+                <div class="list-group">
+                    <button type="button" class="list-group-item"><b>Priz Adı</b><span id="" class="floatR" style="padding-right:3.5%;">30wh</span></button>
+                    <button type="button" class="list-group-item"><b>Açık/Kapalı</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="" class="floatR">35wh</span>                        </button>
+                </div>
 
-                            <label for="sel1">End:</label>
-                            <select class="form-control" id="sel2" placeholder=".col-xs-2">
-                                <option>1</option>
-                                <option>2</option>
-                                <option>3</option>
-                                <option>4</option>
-                            </select>
-                        </form>
+                <!--boday-->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Kapat</button>
+                <button type="button" class="btn btn-primary" id="soketSettingsSave">Kaydet</button>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- socketSettings -->
+
+<!--nameSettings-->
+<div id="nameSettings" class="modal container fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">İsim Ayarı</h4>
+            </div>
+
+            <div class="modal-body">
+                <input id="nameInput" placeholder="Name" type="text">
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Kapat</button>
+                <button type="button" class="btn btn-primary" id="nameSettingsSave">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--nameSettings-->
+
+<!-- timeSettings -->
+<div id="timeSettings" class="modal container fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Zamanlama Ayarları</h4>
+            </div>
+
+            <div class="modal-body">
+                <!--<div class="row">
+                    <div class="col-xs-6 textL">
+                        <label for="socketNameLabel">Start Time</label>
+                        <div class="input-group clockpicker" data-placement="bottom" data-align="left" data-autoclose="true">
+
+                            <input type="text" class="form-control" id="startDate" value="13:14">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
                     </div>
-                </form>
-                <br>
-                <div class="form-group">
-                    <button type="button" class="btn btn-primary add-gadget-btn btn-sm">Add!</button>
+                    <div class="col-xs-6 textL">
+                        <label for="socketNameLabel">End Time</label>
+                        <div class="input-group clockpicker" data-placement="bottom" data-align="left" data-autoclose="true">
+
+                            <input type="text" class="form-control" id="endDate" value="13:14">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>-->
+                <!--<button class="btn btn-default" data-toggle="modal" href="#stack3">Launch modal</button>-->
+                <div class="panel-group textL" id="accordion" role="tablist" aria-multiselectable="true">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                10:30 - 12:30<div class="floatR">
+                            <input class="floatR" type="checkbox" name="my-checkbox" data-size="mini">
+                        </div>
+                                </a>
+                                </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                            <div class="panel-body">
+                                 <div class="list-group">
+                                    <button type="button" class="list-group-item" data-toggle="modal" href="#postponeSettings"><b>Açılış Saati</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="" class="floatR">10:30</span></button>
+                                    <button type="button" class="list-group-item" data-toggle="modal" href="#postponeSettings"><b>Kapanış Saati</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="" class="floatR">12:30</span></button>
+                                    <button type="button" class="list-group-item"><b>Günler</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="" class="floatR">Pzt,Çrş,Prş</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          10:30 - 12:30<div class="floatR">
+                            <input class="floatR" type="checkbox" name="my-checkbox" data-size="mini">
+                        </div>
+        </a>
+      </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+         10:30 - 12:30<div class="floatR">
+                            <input class="floatR" type="checkbox" name="my-checkbox" data-size="mini">
+                        </div>
+        </a>
+      </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                            <div class="panel-body">3
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>            
-        </div>-->
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Kapat</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- timeSettings -->
+<!-- postponeSettings -->
+<div id="postponeSettings" class="modal container fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Geciktirme Ayarı</h4>
+            </div>
+
+            <div class="modal-body">
+                <input id="out_date" data-role="datebox" data-options='{"mode":"durationflipbox","useInline":true,"useInlineAlign":"center"}'
+                type="text">
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Kapat</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- postponeSettings -->

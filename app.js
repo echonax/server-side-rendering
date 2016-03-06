@@ -41,14 +41,12 @@ var db = new db.db(connection);
 //PAGE MANAGER
 var _HTML_GAME           		= fs.readFileSync('client/game.cec', 'UTF8');
 var _HTML_GAME_HOME             = fs.readFileSync('client/content/home.cec', 'UTF8');
-var _HTML_GAME_TOPOLOGY         = fs.readFileSync('client/content/topology.cec', 'UTF8');
 
 
 _HTML_GAME_HOME       		= _HTML_GAME.replace('%CONTENT%', _HTML_GAME_HOME);
-_HTML_GAME_TOPOLOGY			= _HTML_GAME.replace('%CONTENT%', _HTML_GAME_TOPOLOGY);
 //Routes
 var Routes = require('./routes.js');
-var r = new Routes(app,connection,sess, _HTML_GAME,_HTML_GAME_HOME,_HTML_GAME_TOPOLOGY);
+var r = new Routes(app,connection,sess, _HTML_GAME,_HTML_GAME_HOME);
 
 
 
