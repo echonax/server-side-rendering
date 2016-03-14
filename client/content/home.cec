@@ -4,48 +4,48 @@
         <div id="circles">
             <svg height="400" width="300" viewBox="0 0 350 400" perserveAspectRatio="xMinYMid" style="background-color:#000d33">
                 <g>
-                    <circle cx="50" cy="50" r="30" stroke="black" stroke-width="3" fill="red" class="outlets" id="outlet1" />
+                    <circle cx="50" cy="50" r="30" stroke="black" stroke-width="3" fill="red" class="outlets" id="0" />
                     <text x="50" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
                         PRİZ 1</text>
                 </g>
                 <g>
-                    <circle cx="150" cy="50" r="30" stroke="black" stroke-width="3" fill="red" class="outlets" id="outlet2" data-target="#socketSettings"
+                    <circle cx="150" cy="50" r="30" stroke="black" stroke-width="3" fill="red" class="outlets" id="1" data-target="#socketSettings"
                     />
                     <text x="150" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
                         IŞIK </text>
                 </g>
                 <g>
-                    <circle cx="250" cy="50" r="30" stroke="black" stroke-width="3" fill="green" class="outlets" id="outlet3" />
+                    <circle cx="250" cy="50" r="30" stroke="black" stroke-width="3" fill="green" class="outlets" id="2" />
                     <text x="250" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
                         DOZLAMA </text>
                 </g>
                 <g>
-                    <circle cx="50" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet4" />
+                    <circle cx="50" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="3" />
                     <text x="50" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
                         PRİZ 4 </text>
                 </g>
                 <g>
-                    <circle cx="150" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet5" />
+                    <circle cx="150" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="4" />
                     <text x="150" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
                         PRİZ 5 </text>
                 </g>
                 <g>
-                    <circle cx="250" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet6" />
+                    <circle cx="250" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="5" />
                     <text x="250" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
                         PRİZ 6 </text>
                 </g>
                 <g>
-                    <circle cx="50" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet7" />
+                    <circle cx="50" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="6" />
                     <text x="50" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
                         PRİZ 7 </text>
                 </g>
                 <g>
-                    <circle cx="150" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet8" />
+                    <circle cx="150" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="7" />
                     <text x="150" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
                         DALGA </text>
                 </g>
                 <g>
-                    <circle cx="250" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="outlet9" />
+                    <circle cx="250" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="8" />
                     <text x="250" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
                         GRUPLAR </text>
                 </g>
@@ -129,35 +129,13 @@
             </div>
 
             <div class="modal-body">
-                <!--<div class="row">
-                    <div class="col-xs-6 textL">
-                        <label for="socketNameLabel">Start Time</label>
-                        <div class="input-group clockpicker" data-placement="bottom" data-align="left" data-autoclose="true">
-
-                            <input type="text" class="form-control" id="startDate" value="13:14">
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-time"></span>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 textL">
-                        <label for="socketNameLabel">End Time</label>
-                        <div class="input-group clockpicker" data-placement="bottom" data-align="left" data-autoclose="true">
-
-                            <input type="text" class="form-control" id="endDate" value="13:14">
-                            <span class="input-group-addon">
-                                <span class="glyphicon glyphicon-time"></span>
-                            </span>
-                        </div>
-                    </div>
-                </div>-->
                 <!--<button class="btn btn-default" data-toggle="modal" href="#stack3">Launch modal</button>-->
                 <div class="panel-group textL" id="accordion" role="tablist" aria-multiselectable="true">
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                             <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                10:30 - 12:30<div class="floatR">
+                                <span id="collapseOneTitle">10:30 - 12:30<span><div class="floatR">
                             <input class="floatR" type="checkbox" name="my-checkbox" data-size="mini">
                         </div>
                                 </a>
@@ -166,44 +144,15 @@
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
                                  <div class="list-group">
-                                    <button type="button" class="list-group-item" data-toggle="modal" href="#postponeSettings"><b>Açılış Saati</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="" class="floatR">10:30</span></button>
-                                    <button type="button" class="list-group-item" data-toggle="modal" href="#postponeSettings"><b>Kapanış Saati</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="" class="floatR">12:30</span></button>
-                                    <button type="button" class="list-group-item"><b>Günler</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="" class="floatR">Pzt,Çrş,Prş</span></button>
+                                    <button type="button" class="list-group-item" data-toggle="modal" href="#startTimeSetting"><b>Açılış Saati</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="startTimeTitle" class="floatR">10:30</span></button>
+                                    <button type="button" class="list-group-item" data-toggle="modal" href="#endTimeSetting"><b>Kapanış Saati</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="endTimeTitle" class="floatR">12:30</span></button>
+                                    <button type="button" class="list-group-item" data-toggle="modal" href="#weekDaySetting"><b>Günler</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="" class="floatR">Pzt,Çrş,Prş</span></button>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingTwo">
-                            <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          10:30 - 12:30<div class="floatR">
-                            <input class="floatR" type="checkbox" name="my-checkbox" data-size="mini">
-                        </div>
-        </a>
-      </h4>
-                        </div>
-                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-                            <div class="panel-body">2
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="headingThree">
-                            <h4 class="panel-title">
-        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-         10:30 - 12:30<div class="floatR">
-                            <input class="floatR" type="checkbox" name="my-checkbox" data-size="mini">
-                        </div>
-        </a>
-      </h4>
-                        </div>
-                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
-                            <div class="panel-body">3
-                            </div>
-                        </div>
-                    </div>
+                    </div>                   
                 </div>
+
             </div>
 
             <div class="modal-footer">
@@ -224,8 +173,9 @@
             </div>
 
             <div class="modal-body">
-                <input id="out_date" data-role="datebox" data-options='{"mode":"durationflipbox","useInline":true,"useInlineAlign":"center"}'
-                type="text">
+                <label for="socketNameLabel">End Time</label>
+                       <input class="form-control" id="single-input" value="" placeholder="Now">
+                       <button type="button" id="check-minutes">Check the minutes</button>
             </div>
 
             <div class="modal-footer">
@@ -236,3 +186,120 @@
     </div>
 </div>
 <!-- postponeSettings -->
+
+<!-- startTime -->
+<div id="startTimeSetting" class="modal container fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Başlangıç Zamanı Ayarı</h4>
+            </div>
+
+            <div class="modal-body">
+                <label for="socketNameLabel">Start Time</label>
+                        <div class="input-group clockpicker" data-placement="bottom" data-align="left" data-autoclose="true">
+
+                            <input type="text" class="form-control" id="firstStartTime" value="">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Kapat</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- startTime -->
+<!-- endTime -->
+<div id="endTimeSetting" class="modal container fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Sonlandırma Zamanı Ayarı</h4>
+            </div>
+
+            <div class="modal-body">
+                <label for="socketNameLabel">End Time</label>
+                        <div class="input-group clockpicker" data-placement="bottom" data-align="left" data-autoclose="true">
+
+                            <input type="text" class="form-control" id="firstEndTime" value="">
+                            <span class="input-group-addon">
+                                <span class="glyphicon glyphicon-time"></span>
+                            </span>
+                        </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Kapat</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- endTime -->
+
+<!-- weekDay -->
+<div id="weekDaySetting" class="modal container fade" tabindex="-1" data-focus-on="input:first" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                <h4 class="modal-title">Gün Ayarı</h4>
+            </div>
+
+            <div class="modal-body">
+                
+                                                <div class="checkbox-group" id="checkboxes">
+                                                    <ul>
+                                                        <li>
+                                                            <input type="checkbox" id="mon" />
+                                                            <label for="mon">MON</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="tue" />
+                                                            <label for="tue">TUE</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="wed" />
+                                                            <label for="wed">WED</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="thur" />
+                                                            <label for="thur">THUR</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="fri" />
+                                                            <label for="fri">FRI</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="sat" />
+                                                            <label for="sat">SAT</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="sun" />
+                                                            <label for="sun">SUN</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <span id="allChecked" style="display:block;color:#999999;margin-left:30px;">
+                                                    (all days selected)
+                                                </span>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" data-dismiss="modal" class="btn btn-default">Kapat</button>
+                <button type="button" class="btn btn-primary">Kaydet</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- weekDay -->
