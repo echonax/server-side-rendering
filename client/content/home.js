@@ -1,6 +1,7 @@
 $(document).ready(function () {
 
-    var userData = {};
+    var userData = [];
+    var cData = {};
 
     var socket = io.connect();
 
@@ -11,15 +12,22 @@ $(document).ready(function () {
 
     //fields
     var _outlets = $('.outlets');
+    var _outletTitles = $('.outlet-title');
+    //saves
     var _soketSettingsSave = $('#soketSettingsSave');
     var _nameSettingsSave = $('#nameSettingsSave');
-    //name text fields
-    var _nameInput = $('#nameInput');
+    var _postponeSettingsSave = $('#postponeSettingsSave');
+    //2nd modals
+    var _socketNameButton = $('#socketNameButton');
+    var _socketPostponeButton = $('#socketPostponeButton');
+    //1st fields    
     var _socketNameInput = $('#socketNameInput');
+    var _socketPostponeInput = $('#socketPostponeInput');
+    //2nd fields
+    var _nameInput = $('#nameInput');
+    var _postponeInput = $('#postponeInput');
     //checkbox
-    var states = '';
-    //postpone text fields
-    var _socketPostponeInput = $('#postponeInput');
+    var states = '';    
     //time
     var _firstTimeTitle = $('#collapseOneTitle');
     var _firstStartTimeTitle = $('#startTimeTitle');
@@ -32,75 +40,53 @@ $(document).ready(function () {
         span = $('#allChecked');
 
     var _modalTitle = $('#myModalLabel');
-    var _postponeSelector = $('#postponeSelector');
     
     //AJAX DATA
 
     var _isOn = false;
-    var _currentSocket = 999;    
-    
+    var currentSoketNo = 0;
 
     socket.on('socketData', function (data) {
-        console.log(data);
-        //socket.emit('my other event', { my: 'data' });
-        //get;rpi_id;0;can;true;10;10;10;123;
-        userData = data.split(' ');
-        console.log(userData);
+        
+        cData = data.cMessage;
+        userData = data.vMessage.split(' ');
+console.log(cData);
         //slice states
         states = userData[4].replace('{','').replace('}','').split(',');
-        console.log(states); 
-        //for each socket circle fill the color
+console.log(states); 
+        //init
           $.each(_outlets, function (i, v) {
-                if(states[i] === "J_ON" || states[i] === "F_ON")
+              //for each socket circle fill the color
+                if(states[i] === "J_ON")
                     $(v).attr('fill','green');
+                else if(states[i] === "F_ON")
+                    $(v).attr('fill','white');
                 else if(states[i] === "J_OFF")
                     $(v).attr('fill','red');
                 else if( states[i] === "F_OFF")
                     $(v).attr('fill','gray');
+              //for each socket fill out its name
+              var name = cData.data[i].name;
+              if(name.length > 0)
+                  $(_outletTitles)[i].innerHTML = name;
+                    
+                
+             
           });
-           
-        //name fields
-        // $('#outlet1').siblings('text').text(userData[3]);
-        // _socketNameInput.text(userData[3]);
-        // _nameInput.val(userData[3]);
-
-        //checkbox
-        
-
-        // if(userData[4] === "true")
-        //     $('#outlet1').attr('fill','green');
-        // else if(userData[4]==="false")
-        //     $('#outlet1').attr('fill','red');
-        // else
-        //     $('#outlet1').attr('fill','gray');
-
-        //postpone
-        //_socketPostponeInput.text(userData[5]);
-        //time
-        // _firstTimeTitle.text(userData[6] + "-" + userData[7]);
-        // _firstStartTimeTitle.text(userData[6]);
-        // _firstEndTimeTitle.text(userData[7]);
-        // _firstStartTime.val(userData[6]);
-        // _firstEndTime.val(userData[7]);
-        //weektime
-        //$.each(checkboxes,function(i, v){});
 
     });
      
-        
-    //isOn state
-    //$('input[name="my-checkbox"]').on('switchChange.bootstrapSwitch', function(event, state) {
-    //    console.log(state); // true | false
-    //    _isOn = state;
-    //  });
     
-    
-    //init
+    //Clicks
     _outlets.on('click', function (e) {
-        var soketNo = e.target.id;
-        _modalTitle.text(soketNo + " no'lu priz için ayarlar");
-        console.log(states[soketNo]);
-        switch(states[soketNo]){
+         currentSoketNo = e.target.id;
+        _modalTitle.text(currentSoketNo + " no'lu priz için ayarlar");
+console.log(states[currentSoketNo]);        
+console.log(cData.data[currentSoketNo]);
+        //Name of Socket
+        _socketNameInput.text(cData.data[currentSoketNo].name);        
+        //State of Socket
+        switch(states[currentSoketNo]){
             case 'F_ON':
                 $("[name='my-checkbox']").bootstrapSwitch('state', true);  
                 break;
@@ -110,10 +96,22 @@ $(document).ready(function () {
             default:
                 $("[name='my-checkbox']").bootstrapSwitch('state',false);  
         }
+        //Postpone Value of Socket
+        _socketPostponeInput.text(cData.data[currentSoketNo].postpone);
        
         $('#socketSettings').modal('show');        
     });
-
+    //name click
+    _socketNameButton.on('click', function(e){
+        console.log(cData.data[currentSoketNo]);
+        _nameInput.val(cData.data[currentSoketNo].name);        
+        $('#nameSettings').modal('show');
+    });
+    //postpone click
+    _socketPostponeButton.on('click', function(e){
+        _postponeInput.val(cData.data[currentSoketNo].postpone);
+        $('#postponeSettings').modal('show');
+    });
 
   
 
@@ -160,27 +158,7 @@ $(document).ready(function () {
         }
     });
 
-    var input = $('#single-input').clockpicker({
-    placement: 'bottom',
-    align: 'left',
-    autoclose: true,
-    'default': 'now'
-});
-
-    // Manually toggle to the minutes view
-    $('#check-minutes').click(function(e){
-        // Have to stop propagation here
-        e.stopPropagation();
-        input.clockpicker('show')
-                .clockpicker('toggleView', 'minutes');
-    });
-                
-
-                
-                
-    
-
-    //checkboxes.prop('checked', true);
+       //checkboxes.prop('checked', true);
 
     checkboxes.on('change', function () {
         var checked = checkboxes.filter(':checked');
@@ -192,44 +170,47 @@ $(document).ready(function () {
         }
     });
     
-    
-    
-    
-    
-    
     //SAVES
     _nameSettingsSave.on('click', function(e){
-
-        userData[3] = _nameInput.val();       
-        _socketNameInput.text(userData[3]); 
-        $('#outlet1').siblings('text').text(userData[3]);
-        userDataToSend = userData.join(';');
-
-        $.ajax({
-                  method: 'POST',
-                  url: '/socketNameSave',
-                  data: {'0':userDataToSend},
-                  cache: false,
-                  timeout: 5000,
-                }).done(function() {console.log( "success" );});
-
-         
+        console.log(cData, currentSoketNo);
+        cData.data[currentSoketNo].name = _nameInput.val();
+        _socketNameInput.text(_nameInput.val());
+        $('#'+currentSoketNo).siblings('text').text(_nameInput.val());
+        console.log(cData, currentSoketNo);
+        
+        saveAll();
+                
+        //hide modal
+        $('#nameSettings').modal('hide');        
+    });
+    _postponeSettingsSave.on('click', function(e){
+        cData.data[currentSoketNo].postpone = _postponeInput.val();
+        _socketPostponeInput.text(_postponeInput.val());
+        
+        if(_postponeInput.val() > 60 || _postponeInput.val() < 0){
+            alert('Please enter a value between 0 and 60');
+        }else{           
+            saveAll();                    
+            //hide modal
+            $('#postponeSettings').modal('hide'); 
+        }
     });
     
     
     _soketSettingsSave.on('click', function(e){
         console.log('here');
-        var obj = {
-                        "name":_socketNameInput.val(),
-                        "isOn":_isOn,
-                        "postpone":9,
-                        "time":[{
-                            "start":'2',
-                            "end":'3'
-                        }]
-                    };    
-
+        //socketDataSave REST  
     });
+    
+    function saveAll(){
+        $.ajax({
+                  method: 'POST',
+                  url: '/socketDataSave',
+                  data: cData,
+                  cache: false,
+                  timeout: 5000,
+                }).done(function() {console.log( "success" );});
+    }
 
 });
 

@@ -5,48 +5,48 @@
             <svg height="400" width="300" viewBox="0 0 350 400" perserveAspectRatio="xMinYMid" style="background-color:#000d33">
                 <g>
                     <circle cx="50" cy="50" r="30" stroke="black" stroke-width="3" fill="red" class="outlets" id="0" />
-                    <text x="50" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                    <text x="50" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle" class="outlet-title">
                         PRİZ 1</text>
                 </g>
                 <g>
                     <circle cx="150" cy="50" r="30" stroke="black" stroke-width="3" fill="red" class="outlets" id="1" data-target="#socketSettings"
                     />
-                    <text x="150" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                    <text x="150" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle" class="outlet-title">
                         IŞIK </text>
                 </g>
                 <g>
                     <circle cx="250" cy="50" r="30" stroke="black" stroke-width="3" fill="green" class="outlets" id="2" />
-                    <text x="250" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                    <text x="250" y="105" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle" class="outlet-title">
                         DOZLAMA </text>
                 </g>
                 <g>
                     <circle cx="50" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="3" />
-                    <text x="50" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                    <text x="50" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle" class="outlet-title">
                         PRİZ 4 </text>
                 </g>
                 <g>
                     <circle cx="150" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="4" />
-                    <text x="150" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                    <text x="150" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle" class="outlet-title">
                         PRİZ 5 </text>
                 </g>
                 <g>
                     <circle cx="250" cy="150" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="5" />
-                    <text x="250" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                    <text x="250" y="205" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle" class="outlet-title">
                         PRİZ 6 </text>
                 </g>
                 <g>
                     <circle cx="50" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="6" />
-                    <text x="50" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                    <text x="50" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle" class="outlet-title">
                         PRİZ 7 </text>
                 </g>
                 <g>
                     <circle cx="150" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="7" />
-                    <text x="150" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                    <text x="150" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle" class="outlet-title">
                         DALGA </text>
                 </g>
                 <g>
-                    <circle cx="250" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="outlets" id="8" />
-                    <text x="250" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle">
+                    <circle cx="250" cy="250" r="30" stroke="black" stroke-width="3" fill="gray" class="" id="8" />
+                    <text x="250" y="305" font-family="Verdana" font-size="15" fill="white" text-anchor="middle" alignment-baseline="middle" class="">
                         GRUPLAR </text>
                 </g>
             </svg>
@@ -68,13 +68,13 @@
                 <!--boday-->
 
                 <div class="list-group">
-                    <button type="button" class="list-group-item" data-toggle="modal" href="#nameSettings"><b>Priz Adı</b> <i class="fa fa-chevron-right fa-fw floatR"></i><span id="socketNameInput" class="floatR"></span></button>
+                    <button type="button" class="list-group-item" id="socketNameButton"><b>Priz Adı</b> <i class="fa fa-chevron-right fa-fw floatR"></i><span id="socketNameInput" class="floatR"></span></button>
                     <button type="button" class="list-group-item"><b>Açık/Kapalı</b>
                         <div class="floatR">
                             <input class="floatR" type="checkbox" name="my-checkbox" data-size="mini">
                         </div>
                     </button>
-                    <button type="button" class="list-group-item" data-toggle="modal" href="#postponeSettings"><b>Geciktirme</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="postponeInput" class="floatR">Yok</span></button>
+                    <button type="button" class="list-group-item" id="socketPostponeButton"><b>Geciktirme</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="socketPostponeInput" class="floatR">Yok</span></button>
                     <button type="button" class="list-group-item" data-toggle="modal" href="#timeSettings"><b>Zamanlama</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="timeInput" class="floatR">Yok</span></button>
                     <button type="button" class="list-group-item"><b>Grup</b><i class="fa fa-chevron-right fa-fw floatR"></i><span id="timeInput" class="floatR">Su Çekme</span></button>
                 </div>
@@ -173,14 +173,13 @@
             </div>
 
             <div class="modal-body">
-                <label for="socketNameLabel">End Time</label>
-                       <input class="form-control" id="single-input" value="" placeholder="Now">
-                       <button type="button" id="check-minutes">Check the minutes</button>
+                <label for="postponeInput">Geciktirme Değeri: </label>
+                      <input id="postponeInput" placeholder="Postpone" type="number" min="0" max="60">
             </div>
 
             <div class="modal-footer">
                 <button type="button" data-dismiss="modal" class="btn btn-default">Kapat</button>
-                <button type="button" class="btn btn-primary">Kaydet</button>
+                <button type="button" class="btn btn-primary" id="postponeSettingsSave">Kaydet</button>
             </div>
         </div>
     </div>

@@ -15,12 +15,9 @@
   
   <script src="node_modules/bootstrap-switch/dist/js/bootstrap-switch.min.js"></script>
   <link href="node_modules/bootstrap-switch/dist/css/bootstrap3/bootstrap-switch.min.css" rel="stylesheet">
-  <!--<link href="libs/bootstrap-modal-master/css/bootstrap-modal.css" rel="stylesheet">
-  <link href="libs/bootstrap-modal-master/css/bootstrap-modal-bs3patch.css" rel="stylesheet">-->
+
   <link href="style.css" rel="stylesheet">
   
-  <!--<script type="text/javascript" src="libs/bootstrap-modal-master/js/bootstrap-modalmanager.js"></script> 
-  <script type="text/javascript" src="libs/bootstrap-modal-master/js/bootstrap-modal.js"></script> -->
   <!--clockpicker-->
   <script type="text/javascript" src="libs/clockpicker/bootstrap-clockpicker.min.js"></script>
   <link rel="stylesheet" type="text/css" href="libs/clockpicker/bootstrap-clockpicker.min.css">

@@ -1,7 +1,70 @@
 module.exports = function(app, session, io, client, redis, gamePage, gamePageHome){
     var sess;
-
-	var userInitData = {};
+	//THE DATA
+	var userInitData = {
+		'cMessage':{
+			userName:'',
+			data:[
+				{
+					name:'',
+					postpone:'',
+					startTimes:'',
+					endTimes:'',
+					days:''
+				},
+				{
+					name:'',
+					postpone:'',
+					startTimes:'',
+					endTimes:'',
+					days:''
+				},
+				{
+					name:'',
+					postpone:'',
+					startTimes:'',
+					endTimes:'',
+					days:''
+				},
+				{
+					name:'',
+					postpone:'',
+					startTimes:'',
+					endTimes:'',
+					days:''
+				},
+				{
+					name:'',
+					postpone:'',
+					startTimes:'',
+					endTimes:'',
+					days:''
+				},
+				{
+					name:'',
+					postpone:'',
+					startTimes:'',
+					endTimes:'',
+					days:''
+				},
+				{
+					name:'',
+					postpone:'',
+					startTimes:'',
+					endTimes:'',
+					days:''
+				},
+				{
+					name:'',
+					postpone:'',
+					startTimes:'',
+					endTimes:'',
+					days:''
+				}
+			]
+		},
+		'vMessage':''
+	};
 
 	io.on('connection', function(socket){
 		console.log("Server connection.io");
@@ -13,7 +76,7 @@ module.exports = function(app, session, io, client, redis, gamePage, gamePageHom
 	});
 
 	io.on('socketSave', function(socket){
-		console.log(socket);
+		console.log( socket);
 		//client.set('can', 'get;rpi_id;0;can;true;10;10:30;11:39;123;15:30;15:40;5', redis.print);
 	});
 	
@@ -38,10 +101,42 @@ module.exports = function(app, session, io, client, redis, gamePage, gamePageHom
 		var user_name=req.body.user;
 		var password=req.body.password;
 
-		console.log('Checking db for username = '+user_name+' and password = '+password);
-		res.end("yes");
-		client.publish("123456789_REQUEST", '1234 SOCKET GET ALL CURRENT_STATE');
+		console.log('Checking db for rpi id = '+user_name+' and password = '+password);
+		// C part ;)
+		client.get("cMessage_" + user_name, function(error,value){
+
+			if(error){
+				console.log("error getting val", error);
+			}
+			console.log("cMessage_" + user_name, value);
+			var parsedValue = JSON.parse(value);
+
+			if(parsedValue != null){
+				userInitData.cMessage = parsedValue;}
+
+			userInitData.cMessage.userName = user_name;
+
+		});
+		//V part
+		//want randomSequenceId's all data
+		var randomSequenceId = Math.floor((Math.random() * 9000) + 1000);
+		client.publish("123456789_REQUEST", randomSequenceId + ' SOCKET GET ALL CURRENT_STATE',function(){console.log('publish cb');});
+		//subscribe in order to listen the response for that rpi_id with randomSequenceId
 		client.subscribe('123456789_REPLY');
+		//if that message ever arrives from volcano check the rpi_id und randomSequenceId
+		client.on("message", function (channel, message) {
+			var msgArray = message.split(' ');
+			var rpi_id = msgArray[0];
+			console.log("client channel " + channel + ": " + message);
+			userInitData.vMessage = message;
+			if(rpi_id == randomSequenceId){
+				res.end("yes");
+			}else{
+				//change this to no for prod******************************
+				res.end("yes");
+			}
+			client.unsubscribe("123456789_REPLY");
+		});
 		
 	});
 
@@ -51,13 +146,14 @@ module.exports = function(app, session, io, client, redis, gamePage, gamePageHom
 			console.log("inside get home")
 			if(sess.username){
 				res.send(gamePageHome);
+                console.log(JSON.stringify(userInitData));
 			}else{
 				//this can be replaced with a page
 				res.write('<h1>Please login first.</h1>');
 				res.end('<a href='+'/'+'>Login</a>');
 			}
 			
-		});
+	});
 
 
 	app.get('/logout',function(req,res){
@@ -71,21 +167,12 @@ module.exports = function(app, session, io, client, redis, gamePage, gamePageHom
 		});
 	});
 
-	
-	
-
-	
-	client.on("message", function (channel, message) {
-    	console.log("client channel " + channel + ": " + message);
-    
-	});
-	
-
-	app.post('/socketNameSave',function(req,res){
-		var obj = req.body;
-		console.log( obj[0] );
-		userInitData = obj[0];
-		client.set('can', obj[0] , redis.print);
+	app.post('/socketDataSave',function(req,res){
+		console.log('boday \n'+ JSON.stringify(req.body));
+        //set on redis
+		client.set("cMessage_" + req.body.userName, JSON.stringify(req.body) , redis.print);
+        //set locally
+        userInitData.cMessage = req.body;
 	});
 
 
@@ -94,27 +181,6 @@ module.exports = function(app, session, io, client, redis, gamePage, gamePageHom
 	});
 
 
-    client.set('soketName', 'get;rpi_id;0;can;true;10;10:30;11:39;123;15:30;15:40;5', redis.print);
-	client.set('soketState', '1234 SOCKET INFO A {F_ON,F_OFF,J_ON,J_OFF,F_OFF,F_OFF,F_OFF,F_OFF}', redis.print);
-    //123456789_REPLY: 1234 SOCKET INFO A {F_ON,F_OFF,J_ON,J_OFF,F_OFF,F_OFF,F_OFF,F_OFF}
-	client.get('soketState', function(error,value){
-
-		if(error){
-			console.log("error getting val", error);
-		}
-		console.log('2', value);
-
-		userInitData = value;
-	});
-    
-    client.get('soketName', function(error,value){
-
-		if(error){
-			console.log("error getting val", error);
-		}
-		console.log('2', value);
-
-	});
 
 
 
