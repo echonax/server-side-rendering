@@ -1,3 +1,6 @@
+input {
+	font-size: 16px !important;
+  }
 .floatL {
 	float:left;
 }
@@ -31,7 +34,8 @@ i{
     -ms-transform: scale(0.8);
     -webkit-transform: scale(0.8); 
     transform: scale(0.8);
-    top:120px !important;
+    margin-top: -20px !important;
+    /*top:120px !important;*/
     /*//left:5px !important;*/
 }
 

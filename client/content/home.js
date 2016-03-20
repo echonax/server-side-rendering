@@ -24,15 +24,19 @@ $(document).ready(function () {
     //2nd modals
     var _socketNameButton = $('#socketNameButton');
     var _socketPostponeButton = $('#socketPostponeButton');
+    var _socketTimeButton = $('#socketTimeButton');
     //1st fields    
     var _socketNameInput = $('#socketNameInput');
     var _socketPostponeInput = $('#socketPostponeInput');
+    var _socketTimeInput = $('#socketTimeInput');
     //2nd fields
     var _nameInput = $('#nameInput');
     var _postponeInput = $('#postponeInput');
     //checkbox
     var states = '';    
     //time
+    var _timeSettingsOptionsPanel = $('#timeSettingsOptionsPanel');
+    var _addNewTimeButton = $('.addNewTimeButton');
     var _firstTimeTitle = $('#collapseOneTitle');
     var _firstStartTimeTitle = $('#startTimeTitle');
     var _firstEndTimeTitle = $('#endTimeTitle');
@@ -120,6 +124,14 @@ console.log(cData.data[currentSoketNo]);
     _socketPostponeButton.on('click', function(e){
         _postponeInput.val(cData.data[currentSoketNo].postpone);
         $('#postponeSettings').modal('show');
+    });
+    //time click
+    _socketTimeButton.on('click', function(e){
+        $('#timeSettings').modal('show');
+    });
+    //addNewTime click
+    _addNewTimeButton.on('click', function(e){
+        $('#newTimeSetting').modal('show');
     });
 
   

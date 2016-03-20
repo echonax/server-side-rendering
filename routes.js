@@ -163,7 +163,7 @@ module.exports = function(app, session, io, client, redis, gamePage, gamePageHom
 		client.set("cMessage_" + req.body.userName, JSON.stringify(req.body) , redis.print);
         //set locally
         userInitData.cMessage = req.body;
-        res.send(200);
+        res.sendStatus(200);
 	});
 
 
