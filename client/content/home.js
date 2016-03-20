@@ -1,14 +1,18 @@
 $(document).ready(function () {
-
+    
+    //Loading animation
+    $(document).ajaxStart(function () {
+                    $("#loadingModal").modal('show');
+                }).ajaxStop(function () {
+                    $("#loadingModal").modal('hide');
+                });
+    $('#loadingModal').modal({
+        backdrop: false
+    });
+    
+    //Main Data
     var userData = [];
     var cData = {};
-
-    var socket = io.connect();
-
-    socket.on('connect', function (data) {
-        console.log(data);
-        //socket.emit('my other event', { my: 'data' });
-    });
 
     //fields
     var _outlets = $('.outlets');
@@ -38,18 +42,25 @@ $(document).ready(function () {
     //weekday
     var checkboxes = $(':checkbox'),
         span = $('#allChecked');
-
+    //modal title
     var _modalTitle = $('#myModalLabel');
     
-    //AJAX DATA
-
-    var _isOn = false;
+    //important DATA
     var currentSoketNo = 0;
-
-    socket.on('socketData', function (data) {
-        
-        cData = data.cMessage;
-        userData = data.vMessage.split(' ');
+    
+    
+    
+    $.ajax({
+                  method: 'GET',
+                  url: '/getCurrentUserData',
+                  cache: false,
+                  timeout: 5000,
+                })
+      .done(function(res) {
+console.log( "success\n", res );                
+            
+        cData = res.cMessage;
+        userData = res.vMessage.split(' ');
 console.log(cData);
         //slice states
         states = userData[4].replace('{','').replace('}','').split(',');
@@ -67,14 +78,12 @@ console.log(states);
                     $(v).attr('fill','gray');
               //for each socket fill out its name
               var name = cData.data[i].name;
+              //in svg text changing innerHTML is a lil different, textContent
               if(name.length > 0)
-                  $(_outletTitles)[i].innerHTML = name;
-                    
-                
-             
-          });
-
-    });
+                  $(_outletTitles)[i].textContent = name;             
+           });          
+    
+}); 
      
     
     //Clicks

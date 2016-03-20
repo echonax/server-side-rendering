@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' name='viewport' />
   <meta charset="utf-8">
   <title>Ceccedil Title</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,7 +29,6 @@
   <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
   
    <script type="text/javascript" src="content/home.js"></script>
-   <script src="/socket.io/socket.io.js"></script>
 
 </head>
 

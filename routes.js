@@ -66,20 +66,6 @@ module.exports = function(app, session, io, client, redis, gamePage, gamePageHom
 		'vMessage':''
 	};
 
-	io.on('connection', function(socket){
-		console.log("Server connection.io");
-		socket.emit('socketData',userInitData);
-	});
-
-	io.on('disconnect', function(socket){
-		console.log("client dcd");
-	});
-
-	io.on('socketSave', function(socket){
-		console.log( socket);
-		//client.set('can', 'get;rpi_id;0;can;true;10;10:30;11:39;123;15:30;15:40;5', redis.print);
-	});
-	
 
 	app.get('/', function(req, res) {
 
@@ -92,6 +78,10 @@ module.exports = function(app, session, io, client, redis, gamePage, gamePageHom
 		}
 
 	});
+    
+    app.get('/getCurrentUserData', function(req, res){
+        res.send(userInitData);
+    });
 
 
 	app.post('/login', function(req, res) {
@@ -173,15 +163,12 @@ module.exports = function(app, session, io, client, redis, gamePage, gamePageHom
 		client.set("cMessage_" + req.body.userName, JSON.stringify(req.body) , redis.print);
         //set locally
         userInitData.cMessage = req.body;
+        res.send(200);
 	});
 
 
 	client.on('error', function(error){
 		console.log('error, ' + error);
 	});
-
-
-
-
 
 }
