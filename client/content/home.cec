@@ -129,7 +129,7 @@
             </div>
 
             <div class="modal-body">
-                <div style="width:100%;height:3vh;" id="timeSettingsOptionsPanel">                    
+                <div style="width:100%;height:4vh;" id="timeSettingsOptionsPanel">                    
                     <a class="floatR addNewTimeButton"><i class="fa fa-plus addNewTimeButton"></i></a>
                 </div>
                 <div class="panel-group textL" id="accordion" role="tablist" aria-multiselectable="true">
@@ -191,11 +191,47 @@
                                 <span class="glyphicon glyphicon-time"></span>
                             </span>
                         </div>
+                        
+                         <div class="checkbox-group" id="newTimeCheckboxes">
+                                                    <ul>
+                                                        <li>
+                                                            <input type="checkbox" id="nmon" />
+                                                            <label for="mon">MON</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="ntue" />
+                                                            <label for="tue">TUE</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="nwed" />
+                                                            <label for="wed">WED</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="nthur" />
+                                                            <label for="thur">THUR</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="nfri" />
+                                                            <label for="fri">FRI</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="nsat" />
+                                                            <label for="sat">SAT</label>
+                                                        </li>
+                                                        <li>
+                                                            <input type="checkbox" id="nsun" />
+                                                            <label for="sun">SUN</label>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <span id="nallChecked" style="display:block;color:#999999;margin-left:30px;">
+                                                    (all days selected)
+                                                </span>
             </div>
 
             <div class="modal-footer">
                 <button type="button" data-dismiss="modal" class="btn btn-default">Kapat</button>
-                <button type="button" class="btn btn-primary">Kaydet</button>
+                <button type="button" class="btn btn-primary" id="newTimeSave">Kaydet</button>
             </div>
         </div>
     </div>
